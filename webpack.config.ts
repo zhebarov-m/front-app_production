@@ -1,9 +1,5 @@
 import path from 'path';
 import webpack from 'webpack';
-import HTMLWebpackPlugin from "html-webpack-plugin";
-import {buildPlugins} from "./config/build/buildPlugins";
-import {buildLoaders} from "./config/build/buildLoaders";
-import {buildResolves} from "./config/build/buildResolves";
 import {buildWebpackConfig} from "./config/build/buildWebpackConfig";
 import {iBuildEnv, iBuildPaths} from "./config/build/types/config";
 
