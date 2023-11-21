@@ -1,11 +1,11 @@
-import {iBuldOptions} from "./types/config";
+import {iBuildOptions} from "./types/config";
 import webpack from "webpack";
 import {buildPlugins} from "./buildPlugins";
 import {buildLoaders} from "./buildLoaders";
 import {buildResolves} from "./buildResolves";
 import {buildDevServer} from "./buildDevServer";
 
-export function buildWebpackConfig(options: iBuldOptions): webpack.Configuration {
+export function buildWebpackConfig(options: iBuildOptions): webpack.Configuration {
     const {paths, mode, isDev} = options
 
     return {

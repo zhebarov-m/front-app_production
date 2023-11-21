@@ -12,7 +12,7 @@ export interface iBuildEnv {
     port: number
 }
 
-export interface iBuldOptions {
+export interface iBuildOptions {
     mode: tBuildMode,
     paths: iBuildPaths,
     isDev: boolean,
