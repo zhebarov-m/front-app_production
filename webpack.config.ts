@@ -1,10 +1,9 @@
-import path from 'path';
-import webpack from 'webpack';
-import {buildWebpackConfig} from "./config/build/buildWebpackConfig";
-import {iBuildEnv, iBuildPaths} from "./config/build/types/config";
+import path from 'path'
+import type webpack from 'webpack'
+import { buildWebpackConfig } from './config/build/buildWebpackConfig'
+import { type iBuildEnv, type iBuildPaths } from './config/build/types/config'
 
 export default (env: iBuildEnv) => {
-
     const paths: iBuildPaths = {
         entry: path.resolve(__dirname, 'src', 'index.tsx'),
         build: path.resolve(__dirname, 'build'),
@@ -12,7 +11,7 @@ export default (env: iBuildEnv) => {
         src: path.resolve(__dirname, 'src')
     }
 
-    const mode = env.mode || 'development';
+    const mode = env.mode || 'development'
     const isDev = mode === 'development'
     const PORT = env.port || 3000
 
@@ -22,7 +21,6 @@ export default (env: iBuildEnv) => {
         isDev,
         port: PORT
     })
-
 
     return config
 }

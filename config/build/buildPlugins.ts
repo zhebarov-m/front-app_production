@@ -1,11 +1,10 @@
-import HTMLWebpackPlugin from "html-webpack-plugin";
-import webpack from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import ReactRefreshPlugin from "@pmmmwh/react-refresh-webpack-plugin";
-import {iBuildOptions} from "./types/config";
+import HTMLWebpackPlugin from 'html-webpack-plugin'
+import webpack from 'webpack'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import { type iBuildOptions } from './types/config'
 
-export function buildPlugins({paths, isDev}: iBuildOptions): webpack.WebpackPluginInstance[] {
-
+export function buildPlugins ({ paths, isDev }: iBuildOptions): webpack.WebpackPluginInstance[] {
     const plugins = [
         new HTMLWebpackPlugin({
             template: paths.html
@@ -16,8 +15,8 @@ export function buildPlugins({paths, isDev}: iBuildOptions): webpack.WebpackPlug
             chunkFilename: 'css/[name].[contenthash:8].css'
         }),
         new webpack.DefinePlugin({
-            __IS_DEV__: JSON.stringify(isDev),
-        }),
+            __IS_DEV__: JSON.stringify(isDev)
+        })
 
     ]
     if (isDev) {
